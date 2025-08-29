@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오동헌 포트폴리오 | 영업 관리</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            color: #0a0a0a;
+        }
+        .highlight {
+            background-color: #fcdd35;
+            padding: 0 4px;
+            font-weight: 700;
+        }
+        .main-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            display: flex;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 350px;
+            background-color: #0a0a0a;
+            color: #fff;
+            padding: 2rem;
+            flex-shrink: 0;
+        }
+        .content {
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="flex flex-col items-center mb-6">
+                <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+                    <!-- Updated image source to use the correct file and path -->
+                    <img src="./증명사진.png" alt="프로필 사진" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-3xl font-bold">오동헌</h1>
+                <p class="text-sm font-light text-gray-300">영업 관리 직무</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Personal Info -->
+                <div class="border-b border-gray-700 pb-4">
+                    <h2 class="text-xl font-bold mb-3">인적 사항</h2>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><span class="font-semibold text-white">연령:</span> 25세, 남</li>
+                        <li><span class="font-semibold text-white">주소:</span> 창원시 마산합포구 반월동</li>
+                        <li><span class="font-semibold text-white">연락처:</span> 010-8299-8741</li>
+                        <li><span class="font-semibold text-white">이메일:</span> mare090945@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <!-- Skills -->
+                <div class="border-b border-gray-700 pb-4">
+                    <h2 class="text-xl font-bold mb-3">기술</h2>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><span class="font-semibold text-white">프로그래밍:</span> Java, C, C#, Python, Javascript, HTML5, Css3</li>
+                        <li><span class="font-semibold text-white">프레임워크:</span> Spring, Vuejs, Jquery, Bootstrap, AngularJS, Reactjs</li>
+                        <li><span class="font-semibold text-white">디자인:</span> Photoshop, Premiere Pro, After Effect, Illustrator, Indesign</li>
+                        <li><span class="font-semibold text-white">데이터 분석:</span> Python, Excel</li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <div class="border-b border-gray-700 pb-4">
+                    <h2 class="text-xl font-bold mb-3">학력</h2>
+                    <p class="text-sm text-gray-300">2019년<br>대구소프트웨어고등학교 / 졸업</p>
+                </div>
+                
+                <!-- Certifications -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">자격증</h2>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><span class="font-semibold text-white">2018.07</span> 정보처리기능사</li>
+                        <li><span class="font-semibold text-white">2024.08</span> 네트워크관리사 2급</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content -->
+        <main class="content">
+            <header class="mb-8">
+                <h1 class="text-4xl font-extrabold leading-tight mb-2">
+                    <span class="highlight">빠르게 배우고 성장하는</span><br>
+                    <span class="highlight">영업 관리 인재</span> 오동헌입니다.
+                </h1>
+                <p class="text-gray-600 leading-relaxed">
+                    다양한 경험을 통해 쌓은 **문제 해결 능력**과 **데이터 기반 사고**는 영업 관리 직무에 빠르게 적응하고 성과를 내는 데 큰 강점이 될 것입니다.
+                </p>
+            </header>
+
+            <!-- Career Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">경력</h2>
+                <div class="space-y-6">
+                    <div>
+                        <p class="font-semibold mb-1">(주) 유니콤넷 | 연구원</p>
+                        <p class="text-sm text-gray-500 mb-2">2018.10 - 2019.06 (9개월)</p>
+                        <p class="text-gray-700">R&D 기술 개발 및 딥러닝 파트 기술 연구를 담당하며, 실시간 CCTV 인물 추적 프로젝트의 서버 및 프론트 엔드 작업을 진행했습니다.</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold mb-1">E-Sports 대회 해설 | 프리랜서</p>
+                        <p class="text-sm text-gray-500 mb-2">2022.08 - 2023.10 (1년 2개월)</p>
+                        <p class="text-gray-700">게임 대회 해설을 맡아 데이터 기반의 분석과 설득력 있는 소통 능력을 길렀습니다.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section>
+                <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">주요 프로젝트 및 활동 경력</h2>
+                <div class="space-y-4">
+                    <a href="./AI_Video_Monitoring_Project_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">AI 영상관제 시스템 R&D 프로젝트</h3>
+                        <p class="text-sm text-gray-600">
+                            기술적 한계를 극복하고 <span class="highlight">실제 기관에 도입</span>된 딥러닝 기술 프로젝트 경험.
+                        </p>
+                    </a>
+                    <a href="./E-Sports_Data_Analysis_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">E-Sports 데이터 통계 및 분석</h3>
+                        <p class="text-sm text-gray-600">
+                            <span class="highlight">복잡한 데이터에서 인사이트를 도출</span>하고, 대중에게 효과적으로 전달한 경험.
+                        </p>
+                    </a>
+                    <a href="./Design_and_Business_Improvement_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">디자인 및 수익구조 개선 프로젝트</h3>
+                        <p class="text-sm text-gray-600">
+                            미적 감각과 <span class="highlight">비즈니스 감각을 결합</span>하여 실질적인 성과를 창출한 경험.
+                        </p>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
