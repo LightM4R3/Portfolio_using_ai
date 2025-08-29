@@ -38,6 +38,23 @@
             background-color: #fff;
             padding: 2rem;
         }
+
+        /* Responsive Design: Mobile styles applied below 768px */
+        @media (max-width: 768px) {
+            .main-container {
+                display: block;
+                margin: 0;
+                border-radius: 0;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 1.5rem;
+                border-radius: 0;
+            }
+            .content {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="p-4">
@@ -46,8 +63,7 @@
         <aside class="sidebar">
             <div class="flex flex-col items-center mb-6">
                 <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
-                    <!-- Updated image source to use the correct file and path -->
-                    <img src="./증명사진.png" alt="프로필 사진" class="w-full h-full object-cover">
+                    <img src="./증명사진.jpg" alt="프로필 사진" class="w-full h-full object-cover">
                 </div>
                 <h1 class="text-3xl font-bold">오동헌</h1>
                 <p class="text-sm font-light text-gray-300">영업 관리 직무</p>
