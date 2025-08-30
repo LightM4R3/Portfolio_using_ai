@@ -30,6 +30,42 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+        /* Modal Overlay Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9; /* For video player */
+        }
+        .modal-close {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .video-thumbnail {
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .video-thumbnail:hover {
+            border-color: #fcdd35;
+        }
     </style>
 </head>
 <body class="p-8">
@@ -42,42 +78,92 @@
         </header>
         
         <div id="accordion-container" class="space-y-4">
+            <!-- Accordion Item 1: Team Fraction -->
             <div class="border rounded-lg">
                 <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
-                    <span class="font-semibold text-lg">공모전 및 해커톤 UI/UX 디자인</span>
+                    <span class="font-semibold text-lg">Team Fraction 브랜드 디자인</span>
                     <span class="transform transition-transform duration-300">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </span>
                 </button>
                 <div class="accordion-content p-4 border-t">
-                    <p class="text-gray-700 mb-4">
-                        이곳에 첫 번째 활동에 대한 상세 설명을 기입합니다. 역할, 기여, 성과 및 배운 점 등을 자세하게 작성할 수 있습니다.
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                        <li><span class="highlight">주요 역할</span>: 사용자 경험 설계 및 시각적 디자인</li>
-                        <li><span class="highlight">핵심 성과</span>: 사용자 편의성을 고려한 인터페이스 제작</li>
-                        <li><span class="highlight">배운 점</span>: 기획부터 실행까지 전체 디자인 프로세스 경험</li>
-                    </ul>
+                    <div class="space-y-4 text-gray-700">
+                        <p><b class="font-semibold text-gray-800">주요 내용:</b> 영상촬영 및 편집계 크루 Team Fraction에서 브랜드 디자인 외주 요청</p>
+                        <p><b class="font-semibold text-gray-800">작업 내용:</b> Fraction이라는 단어가 가진 의미를 통해 심플하지만 정보 전달성이 높은 IT계열의 로고처럼 제작 방향 확정. 로고 및 타이포와 명함 작업까지 진행</p>
+                        <a href="https://www.behance.net/gallery/65649185/FRACTION-Logo-Design" target="_blank">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/cae73865649185.5afba1ad1ebfd.png" alt="Team Fraction 로고 디자인" class="rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Accordion Item 2: M2SYS -->
             <div class="border rounded-lg">
                 <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
-                    <span class="font-semibold text-lg">브랜드 디자인 및 출력물 제작</span>
+                    <span class="font-semibold text-lg">M2SYS (Messenger-Management System)</span>
                      <span class="transform transition-transform duration-300">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </span>
                 </button>
                 <div class="accordion-content p-4 border-t">
-                    <p class="text-gray-700">
-                        이곳에 두 번째 활동에 대한 상세 설명을 기입합니다.
-                    </p>
+                     <div class="space-y-4 text-gray-700">
+                        <p><b class="font-semibold text-gray-800">주요 내용:</b> 대구 교육청 메신저 개편 프로젝트에서 디자인 파트를 총괄</p>
+                        <p><b class="font-semibold text-gray-800">작업 내용:</b> 카카오톡과 같이 모바일 환경과 웹 환경도 고려한 가변형 UI/UX를 설계</p>
+                        <a href="https://www.behance.net/gallery/67721955/Orefolio-(-Portfolio-ver-2018-)?tracking_source=project_owner_other_projects" target="_blank">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/7b82d967721955.5b4425d443c67.png" alt="M2SYS UI/UX 디자인" class="rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accordion Item 3: Proposal Design -->
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">프로그램 운영 위탁사업 제안서 디자인</span>
+                     <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                     <div class="space-y-4 text-gray-700">
+                        <p><b class="font-semibold text-gray-800">주요 내용:</b> 거제조선업희망센터 심리안정지원 프로그램 운영 위탁사업 제안서 출력물 디자인 작업 외주 진행</p>
+                        <p><b class="font-semibold text-gray-800">작업 내용:</b> 가독성을 우선시한 디자인과 출력물임을 고려해 Adobe Indesign으로 진행, 클라이언트의 요구에 맞춰 차후 hwp화 진행</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 4: Opening Video -->
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">공식 게임 대회 오프닝 제작</span>
+                     <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                     <div class="space-y-4 text-gray-700">
+                        <p><b class="font-semibold text-gray-800">주요 내용:</b> Eternal return Season 7 Final - Solo mode 오프닝 영상 제작</p>
+                        <p><b class="font-semibold text-gray-800">작업 내용:</b> 참여 선수들의 하이라이트 장면 편집. 인게임 모델링을 이용해 극적인 연출 추가</p>
+                        <!-- YouTube Video Thumbnail -->
+                        <div class="open-modal video-thumbnail rounded-lg shadow-md overflow-hidden" data-video-id="sx6Qr6FtsNI" data-start-time="15701">
+                            <img src="https://img.youtube.com/vi/sx6Qr6FtsNI/hqdefault.jpg" alt="대회 오프닝 영상 썸네일" class="w-full">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Video Modal -->
+    <div id="video-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span id="close-modal" class="modal-close">&times;</span>
+            <iframe id="video-frame" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <script>
+        // Accordion Script
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
                 const accordionContent = button.nextElementSibling;
@@ -92,6 +178,34 @@
                     accordionContent.style.display = 'block';
                 }
             });
+        });
+
+        // Modal Script
+        const openModalButtons = document.querySelectorAll('.open-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        const modalOverlay = document.getElementById('video-modal-overlay');
+        const videoFrame = document.getElementById('video-frame');
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const videoId = button.dataset.videoId;
+                const startTime = button.dataset.startTime || 0;
+                videoFrame.src = `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1&rel=0`;
+                modalOverlay.style.display = 'flex';
+            });
+        });
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            videoFrame.src = ''; // Stop video to save resources
+        }
+
+        closeModalButton.addEventListener('click', closeModal);
+        // also close modal if clicking on the background overlay
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
         });
     </script>
 </body>
