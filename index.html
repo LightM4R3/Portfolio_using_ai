@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오동헌 포트폴리오 | 영업 관리</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -59,7 +58,6 @@
 </head>
 <body class="p-4">
     <div class="main-container">
-        <!-- Left Sidebar -->
         <aside class="sidebar">
             <div class="flex flex-col items-center mb-6">
                 <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
@@ -70,7 +68,6 @@
             </div>
             
             <div class="space-y-6">
-                <!-- Personal Info -->
                 <div class="border-b border-gray-700 pb-4">
                     <h2 class="text-xl font-bold mb-3">인적 사항</h2>
                     <ul class="text-sm text-gray-300 space-y-2">
@@ -81,7 +78,6 @@
                     </ul>
                 </div>
                 
-                <!-- Skills -->
                 <div class="border-b border-gray-700 pb-4">
                     <h2 class="text-xl font-bold mb-3">기술</h2>
                     <ul class="text-sm text-gray-300 space-y-2">
@@ -92,13 +88,11 @@
                     </ul>
                 </div>
 
-                <!-- Education -->
                 <div class="border-b border-gray-700 pb-4">
                     <h2 class="text-xl font-bold mb-3">학력</h2>
                     <p class="text-sm text-gray-300">2019년<br>대구소프트웨어고등학교 / 졸업</p>
                 </div>
                 
-                <!-- Certifications -->
                 <div>
                     <h2 class="text-xl font-bold mb-3">자격증</h2>
                     <ul class="text-sm text-gray-300 space-y-2">
@@ -109,7 +103,6 @@
             </div>
         </aside>
 
-        <!-- Right Content -->
         <main class="content">
             <header class="mb-8">
                 <h1 class="text-4xl font-extrabold leading-tight mb-2">
@@ -121,7 +114,6 @@
                 </p>
             </header>
 
-            <!-- Career Section -->
             <section class="mb-8">
                 <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">경력</h2>
                 <div class="space-y-6">
@@ -146,26 +138,31 @@
                 </div>
             </section>
             
-            <!-- Projects Section -->
             <section>
-                <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">주요 프로젝트 및 활동 경력</h2>
-                <div class="space-y-4">
-                    <a href="./AI_Video_Monitoring_Project_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
-                        <h3 class="font-semibold text-lg mb-1">AI 영상관제 시스템 R&D 프로젝트</h3>
+                <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">주요 활동 경력</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./AI_R&D.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">AI R&D</h3>
                         <p class="text-sm text-gray-600">
                             기술적 한계를 극복하고 <span class="highlight">실제 기관에 도입</span>된 딥러닝 기술 프로젝트 경험.
                         </p>
                     </a>
-                    <a href="./E-Sports_Data_Analysis_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
-                        <h3 class="font-semibold text-lg mb-1">E-Sports 데이터 통계 및 분석</h3>
+                    <a href="./E-Sports_Analysis.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">E-Sports 데이터 분석</h3>
                         <p class="text-sm text-gray-600">
                             <span class="highlight">복잡한 데이터에서 인사이트를 도출</span>하고, 대중에게 효과적으로 전달한 경험.
                         </p>
                     </a>
-                    <a href="./Design_and_Business_Improvement_designed.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
-                        <h3 class="font-semibold text-lg mb-1">디자인 및 수익구조 개선 프로젝트</h3>
+                    <a href="./Design_Projects.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">디자인</h3>
                         <p class="text-sm text-gray-600">
-                            미적 감각과 <span class="highlight">비즈니스 감각을 결합</span>하여 실질적인 성과를 창출한 경험.
+                            기획, UI/UX, 브랜딩 등 <span class="highlight">다양한 디자인 프로젝트</span>를 통해 사용자 경험을 개선한 경험.
+                        </p>
+                    </a>
+                    <a href="./Etc_Projects.html" class="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200">
+                        <h3 class="font-semibold text-lg mb-1">기타 활동</h3>
+                        <p class="text-sm text-gray-600">
+                            사업 수익 구조 개선 등 <span class="highlight">비즈니스 감각</span>을 발휘하여 실질적인 성과를 창출한 경험.
                         </p>
                     </a>
                 </div>
@@ -174,4 +171,3 @@
     </div>
 </body>
 </html>
-
