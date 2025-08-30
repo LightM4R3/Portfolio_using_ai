@@ -25,6 +25,11 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
+        .accordion-content {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="p-8">
@@ -33,24 +38,61 @@
         
         <header class="mb-8">
             <h1 class="text-4xl font-extrabold mb-2">E-Sports 데이터 통계 및 분석</h1>
-            <p class="text-gray-500">2022년 8월 ~ 2023년 10월</p>
+            <p class="text-gray-500">데이터 기반 전략 분석 및 콘텐츠 제작</p>
         </header>
         
-        <section class="mb-6">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">역할 및 기여</h2>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><span class="highlight">데이터 수집 및 분석</span>: Python과 Excel을 활용해 선수 및 팀의 경기 데이터를 분석했습니다.</li>
-                <li><span class="highlight">전략 분석관 및 칼럼니스트</span>: 분석 데이터를 바탕으로 경기 전략을 예측하고, 칼럼을 작성하여 팬들에게 인사이트를 제공했습니다.</li>
-                <li><span class="highlight">공식 해설 및 중계</span>: 공식 대회 해설을 맡아 복잡한 경기 상황을 명확하고 설득력 있게 전달했습니다.</li>
-            </ul>
-        </section>
+        <div id="accordion-container" class="space-y-4">
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">공식 대회 해설 및 중계</span>
+                    <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700 mb-4">
+                        이곳에 첫 번째 활동에 대한 상세 설명을 기입합니다. 역할, 기여, 성과 및 배운 점 등을 자세하게 작성할 수 있습니다.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="highlight">주요 역할</span>: 데이터 기반 상황 분석 및 전달</li>
+                        <li><span class="highlight">핵심 성과</span>: 시청자 이해도 증진 및 경기 몰입감 향상</li>
+                        <li><span class="highlight">배운 점</span>: 복잡한 정보를 명확하게 전달하는 커뮤니케이션 능력</li>
+                    </ul>
+                </div>
+            </div>
 
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">성과 및 배운 점</h2>
-            <p class="text-gray-700 leading-relaxed">
-                이 경험은 <span class="highlight">복잡한 데이터에서 핵심적인 인사이트를 도출하는 능력</span>을 길러주었습니다. 또한, 분석한 내용을 <span class="highlight">스토리텔링</span>하여 대중에게 효과적으로 전달하는 커뮤니케이션 능력을 배양했습니다. 영업 관리 직무에서 시장 데이터를 분석하고 고객에게 맞춤형 전략을 제시하는 데 큰 강점이 될 것입니다.
-            </p>
-        </section>
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">전략 분석 칼럼니스트</span>
+                     <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700">
+                        이곳에 두 번째 활동에 대한 상세 설명을 기입합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+                
+                button.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+
+                if (accordionContent.style.display === 'block') {
+                    accordionContent.style.display = 'none';
+                } else {
+                    accordionContent.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
