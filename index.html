@@ -37,10 +37,16 @@
             background-color: #fff;
             padding: 2rem;
         }
+        /* Accordion specific styles */
         .accordion-content {
-            display: none;
+            max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.3s ease-out; /* Smooth transition for height */
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Adjust based on maximum content height */
+            /* This max-height needs to be large enough to contain all content, 
+               or dynamic calculation with JS for perfect fit. */
         }
 
         /* Responsive Design: Mobile styles applied below 768px */
@@ -185,8 +191,8 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>DJ Club party 오랜지쿠라 - Vol.0 / Vol.1 로고 및 브랜드 디자인, 출력물 디자인 작업 및 수익구조 개선을 위한 칵테일 메뉴 개발 및 판매 총괄</li>
-                                <li>Void Divers TRPG E-book 펀딩 - 디자인 총괄 (현재 작업 진행중)</li>
+                                <li><span class="font-semibold">DJ Club party 오랜지쿠라 - Vol.0 / Vol.1</span> 로고 및 브랜드 디자인, 출력물 디자인 작업 및 수익구조 개선을 위한 칵테일 메뉴 개발 및 판매 총괄</li>
+                                <li><span class="font-semibold">Void Divers TRPG E-book 펀딩</span> - 디자인 총괄 (현재 작업 진행중)</li>
                             </ul>
                         </div>
                     </div>
@@ -199,26 +205,26 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>Eternal return Masters Open#10 - 예선전 C조 중계 및 해설</li>
-                                <li>EVS 대회 점수산정 시트 및 옵저빙, 룰북 등 대회 관리 및 에셋 제공</li>
-                                <li>Eternal return Masters Open#11 - 서바이벌 스테이지, 와일드카드전 공식 해설</li>
-                                <li>Eternal return Masters Open#12 - 예선전 C조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#13 - 2차예선 중계 및 서바이벌 스테이지, 와일드카드전 공식 해설</li>
-                                <li>Eternal return Season 8 FINAL DAY 2(Solo mode) - 오프라인 공식 해설</li>
-                                <li>Eternal return Masters Open#14 - 예선전 A조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#14 - 그룹스테이지, 와일드카드전 공식 해설</li>
-                                <li>FONC 먼슬리컵 - 5월 결승전 해설</li>
-                                <li>2023 대학교 캠퍼스 대항전 이터널리턴부문 - 준결승 A,B조 해설</li>
-                                <li>Eternal return Masters Open#16 - 예선전 B조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#16 - 와일드카드, 결승전 공식 해설</li>
-                                <li>Eternal return Season 9 LCQ Solo, Team Mode - 예선 A조 중계 및 해설</li>
-                                <li>Eternal return Season 9 LCQ Solo mode - 공식 해설</li>
-                                <li>Eternal return Season 9 FINAL DAY 2 Solo mode - 오프라인 공식 해설</li>
-                                <li>Eternal return Masters 2023 S1 P1 - 예선전 C조 중계</li>
-                                <li>Eternal return Masters 2023 S1 P2 - 그룹스테이지, 와일드카드 공식 해설</li>
-                                <li>Eternal return Masters 2023 S1 P3 - 와일드카드, 결승 공식 해설</li>
-                                <li>Eternal return Masters 2023 S1 FINAL - DAY 1 공식 해설</li>
-                                <li>Eternal return Scrim Server Value-up 서버 개설 및 총괄</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#10</span> - 예선전 C조 중계 및 해설</li>
+                                <li><span class="font-semibold">EVS 대회 점수산정 시트</span> 및 옵저빙, 룰북 등 대회 관리 및 에셋 제공</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#11</span> - 서바이벌 스테이지, 와일드카드전 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#12</span> - 예선전 C조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#13</span> - 2차예선 중계 및 서바이벌 스테이지, 와일드카드전 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Season 8 FINAL DAY 2(Solo mode)</span> - 오프라인 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#14</span> - 예선전 A조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#14</span> - 그룹스테이지, 와일드카드전 공식 해설</li>
+                                <li><span class="font-semibold">FONC 먼슬리컵</span> - 5월 결승전 해설</li>
+                                <li><span class="font-semibold">2023 대학교 캠퍼스 대항전 이터널리턴부문</span> - 준결승 A,B조 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#16</span> - 예선전 B조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#16</span> - 와일드카드, 결승전 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Season 9 LCQ Solo, Team Mode</span> - 예선 A조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Season 9 LCQ Solo mode</span> - 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Season 9 FINAL DAY 2 Solo mode</span> - 오프라인 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters 2023 S1 P1</span> - 예선전 C조 중계</li>
+                                <li><span class="font-semibold">Eternal return Masters 2023 S1 P2</span> - 그룹스테이지, 와일드카드 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters 2023 S1 P3</span> - 와일드카드, 결승 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters 2023 S1 FINAL</span>- DAY 1 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Scrim Server Value-up</span> 서버 개설 및 총괄</li>
                             </ul>
                         </div>
                     </div>
@@ -231,13 +237,13 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>Eternal return Masters in Busan - 예선전 C조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#6 - 예선전 C조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#8 - 예선전 C조 중계 및 해설</li>
-                                <li>Eternal return Masters Open#8 - 그룹스테이지, 와일드카드전 공식 해설</li>
-                                <li>Eternal return Season 7 Final - 전략 분석관 및 칼럼니스트 외주 작업</li>
-                                <li>Eternal return Season 7 Final - Solo mode 오프닝 영상 제작</li>
-                                <li>Eternal return Masters return Masters in busan ~ open 9 - 데이터 통계 및 선수 분석자료 제작</li>
+                                <li><span class="font-semibold">Eternal return Masters in Busan</span> - 예선전 C조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#6</span> - 예선전 C조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#8</span> - 예선전 C조 중계 및 해설</li>
+                                <li><span class="font-semibold">Eternal return Masters Open#8</span> - 그룹스테이지, 와일드카드전 공식 해설</li>
+                                <li><span class="font-semibold">Eternal return Season 7 Final</span> - 전략 분석관 및 칼럼니스트 외주 작업</li>
+                                <li><span class="font-semibold">Eternal return Season 7 Final</span> - Solo mode 오프닝 영상 제작</li>
+                                <li><span class="font-semibold">Eternal return Masters return Masters in busan ~ open 9</span> - 데이터 통계 및 선수 분석자료 제작</li>
                             </ul>
                         </div>
                     </div>
@@ -250,7 +256,7 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>거제조선업희망센터 심리안정지원 프로그램 운영 위탁사업 제안서 - 출력물 디자인 작업 외주 진행</li>
+                                <li><span class="font-semibold">거제조선업희망센터 심리안정지원 프로그램 운영 위탁사업 제안서</span> - 출력물 디자인 작업 외주 진행</li>
                             </ul>
                         </div>
                     </div>
@@ -263,7 +269,7 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>주식회사 유니콤넷 인공지능 영상관제 시스템 R&D 프로젝트 - 실시간 cctv 인물 추적 및 녹화영상 기반 객체 검색, 객체의 동선 파악 등의 딥러닝 기술 도입한 프로젝트 개발. 서버 프로토콜과 프론트앤드 작업. 2019년 성남시청 도입</li>
+                                <li><span class="font-semibold">주식회사 유니콤넷 인공지능 영상관제 시스템 R&D 프로젝트</span> - 실시간 cctv 인물 추적 및 녹화영상 기반 객체 검색, 객체의 동선 파악 등의 딥러닝 기술 도입한 프로젝트 개발. 서버 프로토콜과 프론트앤드 작업. 2019년 성남시청 도입</li>
                             </ul>
                         </div>
                     </div>
@@ -276,10 +282,10 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>Team Fraction - 브랜드 디자인 작업 외주 진행</li>
-                                <li>대구 교육청 메신저 개편 프로젝트 M2SYS(Messenger-Management System) - UI/UX 디자인 파트 총괄</li>
-                                <li>제 2회 DGSW 해커톤 캠프 - 디자인 멘토 참여</li>
-                                <li>딥러닝 기반 동영상 키워드 객체 모듈 Search Video Keyword - 객체 검출 및 태그 DB자동화, 차량 번호 검출 모듈 개발</li>
+                                <li><span class="font-semibold">Team Fraction</span> - 브랜드 디자인 작업 외주 진행</li>
+                                <li><span class="font-semibold">대구 교육청 메신저 개편 프로젝트 M2SYS(Messenger-Management System)</span> - UI/UX 디자인 파트 총괄</li>
+                                <li><span class="font-semibold">제 2회 DGSW 해커톤 캠프</span> - 디자인 멘토 참여</li>
+                                <li><span class="font-semibold">딥러닝 기반 동영상 키워드 객체 모듈 Search Video Keyword</span> - 객체 검출 및 태그 DB자동화, 차량 번호 검출 모듈 개발</li>
                             </ul>
                         </div>
                     </div>
@@ -292,9 +298,9 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>STAC 2017 IOT분야 시각장애인 보행 솔루션 서비스 ‘빛잡이’ - 디자인 및 Android 개발</li>
-                                <li>대구디지털산업진흥원 주체 2017 Global Innovator Festa 아이디어톤 분야 행정안전부 장관상 (1위)</li>
-                                <li>DGSW 소프트웨어 나르샤 프로젝트 - GPS 기반 장소소개 SNS TU(Trip Useful) - Android 개발 및 UI/UX 디자인</li>
+                                <li><span class="font-semibold">STAC 2017 IOT분야 시각장애인 보행 솔루션 서비스 ‘빛잡이’</span> - 디자인 및 Android 개발</li>
+                                <li><span class="font-semibold">대구디지털산업진흥원 주체 2017 Global Innovator Festa 아이디어톤 분야</span> 행정안전부 장관상 (1위)</li>
+                                <li><span class="font-semibold">DGSW 소프트웨어 나르샤 프로젝트 - GPS 기반 장소소개 SNS TU(Trip Useful)</span> - Android 개발 및 UI/UX 디자인</li>
                             </ul>
                         </div>
                     </div>
@@ -307,9 +313,9 @@
                         </button>
                         <div class="accordion-content p-4 border-t text-sm">
                             <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>제 14회 대구 ICT 창의성 경진대회 - 개발 및 디자이너 멘토 참여</li>
-                                <li>Rhytm-game Master in Changwon - 디자인 작업 총괄 및 스태프 참여</li>
-                                <li>제 1회 디지털 사이니지 공모전 KCA 장관상 (1위) - 학교나 집단, 그룹 내 전달사항 등을 효과적으로 전달하기 위한 디지털 사이니지 프로젝트 FUD(For Ultra Display) UI/UX 디자인 및 XAML 프론트 개발</li>
+                                <li><span class="font-semibold">제 14회 대구 ICT 창의성 경진대회</span> - 개발 및 디자이너 멘토 참여</li>
+                                <li><span class="font-semibold">Rhytm-game Master in Changwon</span> - 디자인 작업 총괄 및 스태프 참여</li>
+                                <li><span class="font-semibold">제 1회 디지털 사이니지 공모전 KCA 장관상 (1위)</span> - 학교나 집단, 그룹 내 전달사항 등을 효과적으로 전달하기 위한 디지털 사이니지 프로젝트 FUD(For Ultra Display) UI/UX 디자인 및 XAML 프론트 개발</li>
                             </ul>
                         </div>
                     </div>
@@ -324,15 +330,13 @@
                 const accordionContent = button.nextElementSibling;
                 const icon = button.querySelector('span:last-child');
                 
-                // Toggle active state for styling
                 button.classList.toggle('active');
                 icon.classList.toggle('rotate-180');
 
-                // Toggle visibility of the content
-                if (accordionContent.style.display === 'block') {
-                    accordionContent.style.display = 'none';
+                if (accordionContent.classList.contains('active')) {
+                    accordionContent.classList.remove('active');
                 } else {
-                    accordionContent.style.display = 'block';
+                    accordionContent.classList.add('active');
                 }
             });
         });
