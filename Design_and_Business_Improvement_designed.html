@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>디자인 및 수익구조 개선 프로젝트</title>
+    <title>디자인 프로젝트</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -25,6 +25,11 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
+        .accordion-content {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="p-8">
@@ -32,25 +37,62 @@
         <a href="./index.html" class="text-blue-500 hover:underline mb-8 inline-block">&larr; 이력서로 돌아가기</a>
         
         <header class="mb-8">
-            <h1 class="text-4xl font-extrabold mb-2">디자인 및 수익구조 개선 프로젝트</h1>
-            <p class="text-gray-500">2016년 ~ 현재</p>
+            <h1 class="text-4xl font-extrabold mb-2">디자인 프로젝트</h1>
+            <p class="text-gray-500">UI/UX, 브랜딩, 콘텐츠 디자인 관련 활동</p>
         </header>
         
-        <section class="mb-6">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">역할 및 기여</h2>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><span class="highlight">다수의 공모전 및 해커톤 참여</span>: UI/UX 디자인 및 개발을 담당하며 기획부터 실행까지 전체 과정을 경험했습니다.</li>
-                <li><span class="highlight">브랜드 디자인 및 출력물 제작</span>: DJ 클럽 파티의 로고, 포스터, 메뉴판 등 디자인 작업을 총괄했습니다.</li>
-                <li><span class="highlight">수익구조 개선</span>: 칵테일 메뉴 개발 및 판매를 총괄하여 실제 사업의 수익성을 높이는 데 기여했습니다.</li>
-            </ul>
-        </section>
+        <div id="accordion-container" class="space-y-4">
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">공모전 및 해커톤 UI/UX 디자인</span>
+                    <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700 mb-4">
+                        이곳에 첫 번째 활동에 대한 상세 설명을 기입합니다. 역할, 기여, 성과 및 배운 점 등을 자세하게 작성할 수 있습니다.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="highlight">주요 역할</span>: 사용자 경험 설계 및 시각적 디자인</li>
+                        <li><span class="highlight">핵심 성과</span>: 사용자 편의성을 고려한 인터페이스 제작</li>
+                        <li><span class="highlight">배운 점</span>: 기획부터 실행까지 전체 디자인 프로세스 경험</li>
+                    </ul>
+                </div>
+            </div>
 
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">성과 및 배운 점</h2>
-            <p class="text-gray-700 leading-relaxed">
-                이 다양한 경험들은 <span class="highlight">문제 해결 능력</span>과 <span class="highlight">실행력</span>을 길러주었으며, <span class="highlight">미적 감각과 비즈니스 감각을 동시에 활용</span>하는 방법을 익히게 해주었습니다. 이는 영업 관리 직무에서 고객의 니즈를 파악하고, 매출을 증대시키는 창의적인 방안을 모색하는 데 큰 도움이 될 것입니다.
-            </p>
-        </section>
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">브랜드 디자인 및 출력물 제작</span>
+                     <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700">
+                        이곳에 두 번째 활동에 대한 상세 설명을 기입합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+                
+                button.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+
+                if (accordionContent.style.display === 'block') {
+                    accordionContent.style.display = 'none';
+                } else {
+                    accordionContent.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
