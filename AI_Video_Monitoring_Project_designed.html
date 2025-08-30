@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 영상관제 시스템 R&D 프로젝트</title>
+    <title>AI R&D</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -25,6 +25,11 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
+        .accordion-content {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="p-8">
@@ -32,25 +37,62 @@
         <a href="./index.html" class="text-blue-500 hover:underline mb-8 inline-block">&larr; 이력서로 돌아가기</a>
         
         <header class="mb-8">
-            <h1 class="text-4xl font-extrabold mb-2">AI 영상관제 시스템 R&D 프로젝트</h1>
-            <p class="text-gray-500">2019년, (주) 유니콤넷</p>
+            <h1 class="text-4xl font-extrabold mb-2">AI R&D</h1>
+            <p class="text-gray-500">AI 기술 연구 및 개발 관련 활동</p>
         </header>
         
-        <section class="mb-6">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">역할 및 기여</h2>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><span class="highlight">실시간 CCTV 인물 추적 및 딥러닝 기술 연구</span>: 기술적인 배경 지식이 부족했으나, 빠르게 딥러닝 기술을 학습하여 프로젝트에 적용했습니다.</li>
-                <li><span class="highlight">서버 및 프론트 엔드 개발</span>: 시스템의 백엔드와 사용자 인터페이스를 직접 개발하며 기술적 문제 해결 능력을 입증했습니다.</li>
-                <li><span class="highlight">성남시청 도입</span>: 개발한 시스템이 실제 기관에 도입되어 기술이 실무에 적용되는 과정을 이해하고 성취감을 얻었습니다.</li>
-            </ul>
-        </section>
+        <div id="accordion-container" class="space-y-4">
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">AI 영상관제 시스템 R&D 프로젝트</span>
+                    <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700 mb-4">
+                        이곳에 첫 번째 활동에 대한 상세 설명을 기입합니다. 역할, 기여, 성과 및 배운 점 등을 자세하게 작성할 수 있습니다.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="highlight">주요 역할</span>: 서버 및 프론트 엔드 개발</li>
+                        <li><span class="highlight">핵심 성과</span>: 성남시청 시스템 도입</li>
+                        <li><span class="highlight">배운 점</span>: 딥러닝 기술 학습 및 실무 적용 능력</li>
+                    </ul>
+                </div>
+            </div>
 
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-gray-200 pb-2 mb-4">성과 및 배운 점</h2>
-            <p class="text-gray-700 leading-relaxed">
-                이 프로젝트를 통해 <span class="highlight">어려운 문제에 직면했을 때 빠르게 해답을 찾아내는 문제 해결 능력</span>과 <span class="highlight">새로운 분야를 두려워하지 않는 도전 정신</span>을 길렀습니다. 이러한 역량은 영업 관리 직무에서 발생하는 다양한 기술적, 시장적 문제들을 해결하는 데 큰 도움이 될 것입니다.
-            </p>
-        </section>
+            <div class="border rounded-lg">
+                <button class="accordion-header w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-lg">두 번째 활동 제목</span>
+                     <span class="transform transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                <div class="accordion-content p-4 border-t">
+                    <p class="text-gray-700">
+                        이곳에 두 번째 활동에 대한 상세 설명을 기입합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+                
+                button.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+
+                if (accordionContent.style.display === 'block') {
+                    accordionContent.style.display = 'none';
+                } else {
+                    accordionContent.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
